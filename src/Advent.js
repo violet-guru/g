@@ -574,13 +574,30 @@ const Advent = ({ langValue, putLang }) => {
         />
       )}
       <Modal
+        
         open={isModal && loadedPortrait}
+        
         onClose={() => {
           setSelectedDay(undefined);
           setIsModal(false);
         }}
+        sx={{
+                position: "absolute",
+                overflow: "scroll"
+              }}
       >
-        <ModalDialog size="lg" variant="outlined" sx={{ textAlign: "center" }}>
+        <ModalDialog 
+        size="lg" 
+        variant="outlined" 
+        sx={{ 
+                textAlign: "center", 
+                position: "absolute",
+                minHeight: "100%",
+                marginTop: "100px",
+                marginBottom: "100px",
+                overflow: "scroll",
+                height: "80vh"
+                }}>
           <BaseContainer>
             <ModalClose />
             <GiftIn
@@ -588,7 +605,7 @@ const Advent = ({ langValue, putLang }) => {
               sx={{
                 opacity: 1,
                 fontSize: liveModal ? 80 : undefined,
-                marginTop: -10,
+                
               }}
             />
             <Grid
@@ -613,7 +630,7 @@ const Advent = ({ langValue, putLang }) => {
                     marginTop: 0,
                     width: "100%",
                     minWidth: 325,
-                    maxWidth: 500,
+                    maxWidth: 380,
                   }}
                   src={
                     selectedDay != null
